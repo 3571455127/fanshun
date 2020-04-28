@@ -1,0 +1,12 @@
+产品列表：样式13
+http://themes.global-marketing.cn/view/demo/common/bootstrap3/807316/products/13
+产品详情：样式11
+http://themes.global-marketing.cn/view/demo/common/bootstrap3/807316/product/11
+about us ：样式10
+http://themes.global-marketing.cn/view/demo/common/bootstrap3/807316/about/10
+contact us：样式7
+http://themes.global-marketing.cn/view/demo/common/bootstrap3/807316/contact/7
+服务列表页：样式3（放market）
+http://themes.global-marketing.cn/view/demo/common/bootstrap3/807316/service/3
+视频列表页：样式7
+http://themes.global-marketing.cn/view/demo/common/bootstrap3/807316/video/3
