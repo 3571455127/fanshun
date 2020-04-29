@@ -250,6 +250,9 @@ header .navbar {
     border: none;
 }
 
+header .other-navbar {
+    background: rgba(0, 0, 0, .8);
+}
 
 header .navbar-default .navbar-nav>li>a {
     color: #fff;
@@ -2134,6 +2137,10 @@ section.bg-grey {
     --swiper-theme-color: red;
 }
 
+header .wap-box {
+    display: none;
+}
+
 @media (max-width: 1024px) {
 
     .video .service .service-thumbnail a:before,
@@ -2218,8 +2225,119 @@ section.bg-grey {
     .services .box,
     .index .wap-case,
     .index .advantage .advantage-box,
-    .index .center .wap-center {
+    .index .center .wap-center,
+    .index .wap-banner,
+    header .wap-box {
         display: block;
+    }
+
+    .index .wap-banner {
+        margin-top: 50px;
+    }
+
+    .index .advantage {
+        padding-bottom: 0px;
+    }
+
+    header .navbar-brand {
+        padding: 5px 0 !important;
+    }
+
+    header .navbar {
+        background: rgba(0, 0, 0, .8);
+    }
+
+    header .navbar-brand>img {
+        width: 120px !important;
+        padding-top: 0 !important;
+        margin-left: 15px;
+    }
+
+    header .wap-box {
+        float: left;
+        width: 45%;
+        text-align: center;
+    }
+
+    header .wap-search {
+        padding: 10px 30px;
+        display: inline-block;
+    }
+
+    header .wap-language {
+        display: inline-block;
+        position: relative;
+    }
+
+    header .wap-language ul {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: -40px;
+        width: 120px;
+        padding: 10px;
+        background: rgba(0, 0, 0, .8);
+    }
+
+    header .wap-language ul li {
+        border-bottom: 1px solid #fff;
+        overflow: hidden;
+    }
+
+    header .wap-language ul li img {
+        float: left;
+        padding-top: 7.5px;
+    }
+
+    header .wap-language .box-img {
+        padding: 11px;
+    }
+
+    .wap-box .wap-search input {
+        width: 150px;
+        height: 30px;
+        border: 1px solid #fff;
+        border-radius: 6px;
+        padding-left: 10px;
+        background-color: transparent;
+        color: #fff;
+    }
+
+    .wap-box .wap-search input::-webkit-input-placeholder {
+        color: #fff;
+    }
+
+    .wap-box .wap-search form {
+        position: relative;
+        display: none;
+    }
+
+    .wap-box .wap-search form img {
+        position: absolute;
+        top: 2px;
+        right: 5px;
+    }
+
+    header .wap-language ul li a {
+        float: left;
+        color: #fff;
+        font-size: 15px;
+        padding: 10px 0;
+        padding-left: 10px;
+    }
+
+    .navbar-default .navbar-brand {
+        padding-left: 15px;
+    }
+
+    header .navbar-default .navbar-nav>li>a {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    header .language,
+    header .header-search {
+        display: none;
     }
 
     .modal .modal-content {

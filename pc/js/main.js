@@ -61,10 +61,6 @@ $(function () {
             el: '.wap-banner .swiper-pagination',
             clickable: true,
         },
-        navigation: {
-            nextEl: '.wap-banner .swiper-button-next',
-            prevEl: '.wap-banner .swiper-button-prev',
-        },
     })
     // wap-contact
     var mySwiper = new Swiper('.conatact-recommend .wap-about-swiper .swiper-container', {
@@ -177,6 +173,25 @@ $(function () {
     }
     // css3
     new WOW().init();
+
+    // wap
+    $(".wap-language .box-img").click(function () {
+        var flag = $(this).parent().find('ul').is(':hidden');
+        if (flag) {
+            $(".wap-language ul").fadeIn(800)
+        } else {
+            $(".wap-language ul").fadeOut(800)
+
+        }
+    })
+    // wap
+    $(".wap-box .wap-search").click(function () {
+        console.log(98)
+        $(".wap-box .wap-search>img").hide();
+        $("header .wap-language").hide();
+        $(".wap-box .wap-search form").fadeIn(800)
+    })
+
 })
 
 var submitcount2 = 0;
