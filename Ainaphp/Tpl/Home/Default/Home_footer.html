@@ -1,0 +1,48 @@
+
+   
+
+    <footer>
+        <div class="container">
+            <div class="row wow fadeInUp animated">
+                <div class="details col-lg-7 col-md-7">
+                    <div class="top">
+                        <h6>{:L(wantto)}</h6>
+                        <p>{:L(wantto_des)}</p>
+                    </div>
+                    <ul>
+                        <li>{$address}</li>
+                        <li>+86 {$shouji}</li>
+                        <li>+86 {$shoujia}</li>
+                        <li>{$email}</li>
+                    </ul>
+                </div>
+
+                <form class="col-lg-5 col-md-5 clearfix" method="post" action="index.php?g=Home&a=message" onsubmit="return beforeSubmit2(this);">
+                    <div class="clearfix">
+                        <div class="txt col-lg-3 col-md-3 col-sm-3 col-xs-4">{:L(Name)}: <span>*</span></div>
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"> <input placeholder="{:L(Name)}" type="text"
+                                name="name"></div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="txt col-lg-3 col-md-3 col-sm-3 col-xs-4">{:L(Emaila)}: <span>*</span></div>
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"> <input placeholder="{:L(Email)}" type="text"
+                                name="email"></div>
+                    </div>
+                    <div class="clearfix">
+                        <div class="txt col-lg-3 col-md-3 col-sm-3 col-xs-4">{:L(Message)}: <span>*</span></div>
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><textarea rows="3" placeholder="{:L(Message_des)}" name="message"></textarea></div>
+                    </div>
+                    <input type="submit" value="{:L(Send)}" class="footer-btn">
+                </form>
+            </div>
+        </div>
+        <div class="copy  wow fadeInUp animated">{$cop}</div>
+        <div class="goTop" style="display: block;">
+            <i class="topIcon"></i>
+            <p>TOP</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

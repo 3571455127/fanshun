@@ -1,0 +1,127 @@
+
+
+    <div class="product-show">
+        <!-- 路径导航 -->
+
+<include file="Home:path" />
+
+        <div class="container">
+            <div class="row">
+                <div class="clearfix">
+                    <div class="left col-lg-8 col-md-8">
+                        <div class="box-img"><img src="{$thumb}" alt="{$title}"></div>
+                        <div class="proshow-content">
+                            {$content}
+                        </div>
+
+                        <form class="clearfix" method="post" action="index.php?g=Home&amp;a=message"
+                            onsubmit="return beforeSubmit2(this);">
+                            <div class="modal-box clearfix">
+                                <div class="col-lg-4 clo-md-4 col-sm-4 col-xs-6">
+                                    <p>{:L(Name)} <span> *</span></p>
+                                    <input placeholder="{:L(Name)}" type="text" name="name">
+                                </div>
+                                <div class="col-lg-4 clo-md-4 col-sm-4 col-xs-6">
+                                    <p>{:L(Emaila)} <span> *</span></p>
+                                    <input placeholder="{:L(Email)}" type="text" name="email">
+                                </div>
+                                <div class="col-lg-4 clo-md-4 col-sm-4 col-xs-6">
+                                    <p>{:L(Website)}</p>
+                                    <input placeholder="{:L(Phone)}" type="text" name="phone">
+                                </div>
+                            </div>
+                            <div class="modal-box">
+                                <p>{:L(Message)} <span> *</span></p>
+                                <textarea rows="3" placeholder="{:L(Message_des)}"
+                                    name="message"></textarea>
+                            </div>
+                            <input type="submit" value="{:L(SendInquiry)}" class="proshow-sub">
+                        </form>
+
+                    </div>
+                    <div class="right col-lg-4 col-md-4">
+                        <div class="widget">
+                            <div class="customwidget item-price w40">
+                                <span class="text-center">{:L(ProductName)}</span>
+
+                                <hr>
+                                {$guige}
+                                <button class="btn btn-primary">{:L(SubmitReview)}</button>
+                            </div><!-- end newsletter -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- featured -->
+                <div class="featured">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="shop-item">
+                            <div class="post-media entry">
+                                <div class="ribbon-wrapper-green">
+                                    <div class="ribbon-green">Featured</div>
+                                </div>
+                                <img src="__PUBLIC__/www/images/featured1.jpg" alt="" class="img-responsive">
+                                <div class="magnifier">
+                                    <div class="shop-bottom clearfix">
+                                        <a href="shop-single.html" title="Full Preview" class="btn btn-primary"><i
+                                                class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-desc">
+                                <small><a href="#">Logo Design</a></small>
+                                <h3><a href="shop-single.html" title="">9 and 3/4 - Logo Design</a></h3>
+                                <p>Sed sollicitudin mattis eros, eget vulputate nisl laoreet non. Nullam imperdiet nibh
+                                    vel pellentesque egestas. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="shop-item">
+                            <div class="post-media entry">
+                                <div class="ribbon-wrapper-green">
+                                    <div class="ribbon-green">Featured</div>
+                                </div>
+                                <img src="__PUBLIC__/www/images/featured2.jpg" alt="" class="img-responsive">
+                                <div class="magnifier">
+                                    <div class="shop-bottom clearfix">
+                                        <a href="shop-single.html" title="Full Preview" class="btn btn-primary"><i
+                                                class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-desc">
+                                <small><a href="#">Logo Design</a></small>
+                                <h3><a href="shop-single.html" title="">9 and 3/4 - Logo Design</a></h3>
+                                <p>Sed sollicitudin mattis eros, eget vulputate nisl laoreet non. Nullam imperdiet nibh
+                                    vel pellentesque egestas. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="shop-item">
+                            <div class="post-media entry">
+                                <!-- <div class="ribbon-wrapper-green">
+                                    <div class="ribbon-green">Featured</div>
+                                </div> -->
+                                <img src="__PUBLIC__/www/images/featured3.jpg" alt="" class="img-responsive">
+                                <div class="magnifier">
+                                    <div class="shop-bottom clearfix">
+                                        <a href="shop-single.html" title="Full Preview" class="btn btn-primary"><i
+                                                class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-desc">
+                                <small><a href="#">Logo Design</a></small>
+                                <h3><a href="shop-single.html" title="">9 and 3/4 - Logo Design</a></h3>
+                                <p>Sed sollicitudin mattis eros, eget vulputate nisl laoreet non. Nullam imperdiet nibh
+                                    vel pellentesque egestas. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>

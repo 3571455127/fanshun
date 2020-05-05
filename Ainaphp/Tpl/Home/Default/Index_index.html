@@ -1,0 +1,407 @@
+
+    <div class="index">
+        <!-- banner  -->
+        <div class="banner">
+            <!-- pc -->
+            <div class="pc-banner">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <YP:list name="slide_data" id="r" limit="5" field="*" where="fid = 1" key="n">
+                        <div class="swiper-slide">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="content">
+                                       {$r.description}
+                                    </div>
+
+                                </div>
+                            </div>
+                            <a href="{$r.link}" target="_blank"><img src="{$r.pic}" alt="{$r.title}"></a>
+                        </div>
+                         </YP:list>
+<!--                        <div class="swiper-slide">
+                            <a href="" target="_blank"> <img src="__PUBLIC__/www/images/banner.png" alt=""></a>
+                        </div>-->
+
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-btn">
+                        <div class="swiper-button-prev swiper-button-white"></div>
+                        <div class="swiper-button-next swiper-button-white"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- wap -->
+            <div class="wap-banner">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <YP:list name="slide_data" id="r" limit="5" field="*" where="fid = 2" key="n">
+                        <div class="swiper-slide">
+                            <a href="{$r.link}" target="_blank"><img src="{$r.pic}" alt="{$r.title}"></a>
+                        </div>
+                            </YP:list>
+                    </div>
+                    <div class="swiper-pagination"></div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Advantage -->
+        <div class="advantage">
+            <div class="container">
+                <div class="row">
+                   <?php getcatvar('page','id = 111','cont');?>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- pro -->
+        <div class="index-pro">
+            <div class="container">
+                <div class="row">
+                    <h3>{:L(product)}</h3>
+                    <div class="title">{:L(product_des)}</div>
+                    <div class="list clearfix">
+ {if $Think.LANG_SET==en}
+    <YP:list order="listorder desc" catid="110" id="r" posid="1" limit="6">
+                        <a href="{$r.url}" title="{$r.title}" class="box wow fadeInDown animated col-lg-6 col-md-6 col-sm-6">
+                            <div style="position:relative">
+                                <div class="box-img"><img src="{$r.thumb}" alt="{$r.title}" /></div>
+                                <p>{$r.title}</p>
+                            </div>
+                        </a>
+    </YP:list>
+    {elseif  $Think.LANG_SET==es}
+    <YP:list order="listorder desc" catid="116" id="r" posid="1" limit="6">
+                        <a href="{$r.url}" title="{$r.title}" class="box wow fadeInDown animated col-lg-6 col-md-6 col-sm-6">
+                            <div style="position:relative">
+                                <div class="box-img"><img src="{$r.thumb}" alt="{$r.title}" /></div>
+                                <p>{$r.title}</p>
+                            </div>
+                        </a>
+    </YP:list>
+        {elseif  $Think.LANG_SET==ar}
+    <YP:list order="listorder desc" catid="128" id="r" posid="1" limit="6">
+                        <a href="{$r.url}" title="{$r.title}" class="box wow fadeInDown animated col-lg-6 col-md-6 col-sm-6">
+                            <div style="position:relative">
+                                <div class="box-img"><img src="{$r.thumb}" alt="{$r.title}" /></div>
+                                <p>{$r.title}</p>
+                            </div>
+                        </a>
+    </YP:list>
+            {elseif  $Think.LANG_SET==ru}
+    <YP:list order="listorder desc" catid="122" id="r" posid="1" limit="6">
+                        <a href="{$r.url}" title="{$r.title}" class="box wow fadeInDown animated col-lg-6 col-md-6 col-sm-6">
+                            <div style="position:relative">
+                                <div class="box-img"><img src="{$r.thumb}" alt="{$r.title}" /></div>
+                                <p>{$r.title}</p>
+                            </div>
+                        </a>
+    </YP:list>
+    {/if} 
+                    </div>
+                    <div class="pro-more">
+                        <a href="">{:L(ReadMore)}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFO CENTER -->
+        <div class="center">
+            <div class="container">
+                <div class="row">
+                    <h3>{:L(INFOCENTER)}</h3>
+                    <div class="title">{:L(INFOCENTER_des)}</div>
+                    <!-- pc-center -->
+                    <div class="pc-center" style="position:relative;margin-bottom:50px">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide clearfix">
+                                    <div class="box clearfix">
+                                        <div class="img">
+                                            <img src="__PUBLIC__/www/images/center.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <div class="titles">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing
+                                                elit,
+                                                sed
+                                                do eiusmod tempor </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                                suspendisse
+                                                ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                                vel
+                                                facilisis. </p>
+                                            <div class="time">2020/04/12</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="swiper-slide clearfix">
+                                    <div class="box clearfix">
+                                        <div class="txt">
+                                            <div class="titles">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing
+                                                elit,
+                                                sed
+                                                do eiusmod tempor </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                                suspendisse
+                                                ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                                vel
+                                                facilisis. </p>
+                                            <div class="time">2020/04/12</div>
+                                        </div>
+                                        <div class="img">
+                                            <img src="__PUBLIC__/www/images/center.png" alt="">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="swiper-slide clearfix">
+                                    <div class="box clearfix">
+                                        <div class="img">
+                                            <img src="__PUBLIC__/www/images/center.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <div class="titles">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing
+                                                elit,
+                                                sed
+                                                do eiusmod tempor </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                                suspendisse
+                                                ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                                vel
+                                                facilisis. </p>
+                                            <div class="time">2020/04/12</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="swiper-slide clearfix">
+                                    <div class="box clearfix">
+                                        <div class="txt">
+                                            <div class="titles">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing
+                                                elit,
+                                                sed
+                                                do eiusmod tempor </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                                suspendisse
+                                                ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                                vel
+                                                facilisis. </p>
+                                            <div class="time">2020/04/12</div>
+                                        </div>
+                                        <div class="img">
+                                            <img src="__PUBLIC__/www/images/center.png" alt="">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="swiper-slide clearfix">
+                                    <div class="box clearfix">
+                                        <div class="img">
+                                            <img src="__PUBLIC__/www/images/center.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <div class="titles">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing
+                                                elit,
+                                                sed
+                                                do eiusmod tempor </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                                suspendisse
+                                                ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                                vel
+                                                facilisis. </p>
+                                            <div class="time">2020/04/12</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev swiper-button-white"></div>
+                        <div class="swiper-button-next swiper-button-white"></div>
+                    </div>
+
+                    <!-- wap-center -->
+                    <div class="wap-center">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="box clearfix">
+                                        <div class="img">
+                                            <img src="__PUBLIC__/www/images/center.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <div class="titles">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing
+                                                elit,
+                                                sed
+                                                do eiusmod tempor </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                                suspendisse
+                                                ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                                vel
+                                                facilisis. </p>
+                                            <div class="time">2020/04/12</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="box clearfix">
+
+                                        <div class="txt">
+                                            <div class="titles">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing
+                                                elit,
+                                                sed
+                                                do eiusmod tempor </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                                suspendisse
+                                                ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                                vel
+                                                facilisis. </p>
+                                            <div class="time">2020/04/12</div>
+                                        </div>
+                                        <div class="img">
+                                            <img src="__PUBLIC__/www/images/center.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="box clearfix">
+                                        <div class="img">
+                                            <img src="__PUBLIC__/www/images/center.png" alt="">
+                                        </div>
+                                        <div class="txt">
+                                            <div class="titles">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing
+                                                elit,
+                                                sed
+                                                do eiusmod tempor </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                                suspendisse
+                                                ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                                vel
+                                                facilisis. </p>
+                                            <div class="time">2020/04/12</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- case -->
+        <div class="case">
+            <div class="container">
+                <div class="row">
+                    <h3>{:L(Customercase)}</h3>
+                    <div class="title">{:L(Customercase_des)}</div>
+                    <!-- pc -->
+                    <div class="pc-case">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+ {if $Think.LANG_SET==en}
+    <YP:list order="listorder desc" catid="112" id="r" posid="1" limit="10">
+        <div class="swiper-slide">
+            <div class="box-img"><img src="{$r.thumb}" alt="{$r.title}" /></div>
+        </div>
+    </YP:list>
+    {elseif  $Think.LANG_SET==es}
+    <YP:list order="listorder desc" catid="118" id="r" posid="1" limit="10">
+        <div class="swiper-slide">
+            <div class="box-img"><img src="{$r.thumb}" alt="{$r.title}" /></div>
+        </div>
+    </YP:list>
+        {elseif  $Think.LANG_SET==ar}
+    <YP:list order="listorder desc" catid="130" id="r" posid="1" limit="10">
+        <div class="swiper-slide">
+            <div class="box-img"><img src="{$r.thumb}" alt="{$r.title}" /></div>
+        </div>
+    </YP:list>
+            {elseif  $Think.LANG_SET==ru}
+    <YP:list order="listorder desc" catid="124" id="r" posid="1" limit="10">
+        <div class="swiper-slide">
+            <div class="box-img"><img src="{$r.thumb}" alt="{$r.title}" /></div>
+        </div>
+    </YP:list>
+    {/if}     
+                            </div>
+
+                        </div>
+                        <div class="swiper-button-prev swiper-button-white"></div>
+                        <div class="swiper-button-next swiper-button-white"></div>
+                    </div>
+                    <!-- wap -->
+                    <div class="wap-case">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+ {if $Think.LANG_SET==en}
+    <YP:list order="listorder desc" catid="112" id="r" posid="1" limit="10">
+        <div class="swiper-slide">
+            <div class="box-img"><img src="{$r.thumb}" alt="{$r.title}" /></div>
+        </div>
+    </YP:list>
+    {elseif  $Think.LANG_SET==es}
+    <YP:list order="listorder desc" catid="118" id="r" posid="1" limit="10">
+        <div class="swiper-slide">
+            <div class="box-img"><img src="{$r.thumb}" alt="{$r.title}" /></div>
+        </div>
+    </YP:list>
+        {elseif  $Think.LANG_SET==ar}
+    <YP:list order="listorder desc" catid="130" id="r" posid="1" limit="10">
+        <div class="swiper-slide">
+            <div class="box-img"><img src="{$r.thumb}" alt="{$r.title}" /></div>
+        </div>
+    </YP:list>
+            {elseif  $Think.LANG_SET==ru}
+    <YP:list order="listorder desc" catid="124" id="r" posid="1" limit="10">
+        <div class="swiper-slide">
+            <div class="box-img"><img src="{$r.thumb}" alt="{$r.title}" /></div>
+        </div>
+    </YP:list>
+    {/if}   
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+   

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="{$seo_keywords}" />
+    <meta name="description" content="{$seo_description}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <!-- wap -->
+    <meta name="wap-font-scale" content="no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="Robots" content="all">
+
+    <title>{if MODULE_NAME != 'Index'}{$seo_title}{else}{$site_name}{/if}</title>
+    <link rel="stylesheet" href="__PUBLIC__/www/css/swiper.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/www/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/www/css/jquery.treemenu.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/www/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/www/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/www/css/animate.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/www/css/main.css">
+    <script src="__PUBLIC__/www/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/www/js/swiper.min.js"></script>
+    <script src="__PUBLIC__/www/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/www/js/jquery.treemenu.min.js"></script>
+    <script src="__PUBLIC__/www/js/jquery.fancybox.min.js"></script>
+    <script src="__PUBLIC__/www/js/wow.min.js"></script>
+    <script src="__PUBLIC__/www/js/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default {if MODULE_NAME != 'Index'}other-navbar{/if}">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/index.php?l={$Think.LANG_SET}">
+                        <img alt="" src="__PUBLIC__/www/images/logo.png">
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <div class="navbar-right clearfix">
+                        <!-- nav -->
+                        <ul class="nav navbar-nav">
+                            <li class="{if MODULE_NAME == 'Index'}active{/if}"><a href="/index.php?l={$Think.LANG_SET}">{:L(HOME_FONT)}</a></li>
+                            <YP:subcat catid='0'>
+                                <if condition="$r[catname] neq 'THANKS'">
+                                <li class="{if $bcid==$r[id]}active{/if}"><a href="{$r.url}" class="{if $bcid==$r[id]}active{/if}">{$r.catname}</a>
+                                     {if $r[child] == 1}
+                                    <ul class="second">
+                                        <YP:subcat catid="$r[id]" id="rs">
+                                        <li class="{if $parentid==$rs[id]}afinve active{/if} {if $catid==$rs[id]}active{/if}"><a href="{$rs.url}" class="{if $parentid==$rs[id]}afinve active{/if} {if $catid==$rs[id]}active{/if}">{$rs.catname}</a></li>
+                                        </YP:subcat>
+                                    </ul>
+                                     {/if}
+                                </li>
+                                </if>
+                            </YP:subcat>
+<!--                            <li><a href="about.html">about us</a> </li>
+                            <li><a href="video.html">project</a></li>
+                            <li><a href="service.html">Markct</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>-->
+                        </ul>
+                        <!-- search -->
+                        <div class="header-search">
+                            <div class="search-img">
+                                <img src="__PUBLIC__/www/images/search.png" alt="">
+                            </div>
+                            <form action="" class="">
+                                <div class="form-box">
+                                    <div style="position: relative;">
+                                        <div class="s1">
+                                            <img class="images" src="__PUBLIC__/www/images/search.png" alt="">
+                                            <span id="close-button">×</span>
+                                        </div>
+                                        <input id="search" type="search" name="search" placeholder="Search..." id="">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+
+                        <!--  language -->
+                        <div class="language">
+                            <img src="__PUBLIC__/www/images/language.png" alt="">
+                            <ul>
+                                <li class="gnglish"><img src="__PUBLIC__/www/images/en.png" alt=""><a href="/index.php?l=en" >English</a></li>
+                                <li class="spanish"><img src="__PUBLIC__/www/images/es.png" alt=""><a href="/index.php?l=es" >Espanol</a></li>
+                                <li class="arabic"><img src="__PUBLIC__/www/images/ar.png" alt=""><a href="/index.php?l=ar" >اللغة
+                                        العربية</a></li>
+                                <li class="russian"><img src="__PUBLIC__/www/images/ru.png" alt=""><a href="/index.php?l=ru" >русский</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>

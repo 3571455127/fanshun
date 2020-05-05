@@ -1,0 +1,37 @@
+
+
+    <div class="video">
+        <!-- 路径导航 -->
+
+<include file="Home:path" />
+
+        <div class="container">
+            <div class="row">
+                <div class="site-main">
+<volist name="list" id="r">
+    {if $r['videourl']}
+                    <div class="col-sm-6 col-md-4 service">
+                        <div class="service-inner">
+                            <div class="service-thumbnail">
+                                <a data-fancybox="gallery" href="{$r.videourl}">
+                                    <img class="img-responsive" src="{$r.thumb}" alt="{$r.title}"> <i
+                                        class="fa fa-play-circle-o"></i>
+                                    <span><i
+                                            class="factory-cogs-on-wheels-interface-symbol-for-settings-edition-button"></i></span>
+                                </a>
+                            </div>
+                            <div class="service-summary">
+                                <h2 class="service-title"><a href="javascript:;">{$r.title}</a></h2>
+                            </div>
+                        </div>
+                    </div>
+    {/if}
+</volist>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
