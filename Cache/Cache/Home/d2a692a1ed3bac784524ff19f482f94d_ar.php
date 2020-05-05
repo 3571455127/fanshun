@@ -112,7 +112,7 @@
             <div class="pc-banner">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <?php  $_result=M("slide_data")->field("*")->where("fid = 1 and lang=1 AND status=1 ")->order("id desc")->limit("5")->select();; if ($_result): $n=0;foreach($_result as $key=>$r):++$n;$mod = ($n % 2 );?><div class="swiper-slide">
+                        <?php  $_result=M("slide_data")->field("*")->where("fid = 1 and lang=4 AND status=1 ")->order("id desc")->limit("5")->select();; if ($_result): $n=0;foreach($_result as $key=>$r):++$n;$mod = ($n % 2 );?><div class="swiper-slide">
                             <div class="container">
                                 <div class="row">
                                     <div class="content">
@@ -142,7 +142,7 @@
             <div class="wap-banner">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <?php  $_result=M("slide_data")->field("*")->where("fid = 2 and lang=1 AND status=1 ")->order("id desc")->limit("5")->select();; if ($_result): $n=0;foreach($_result as $key=>$r):++$n;$mod = ($n % 2 );?><div class="swiper-slide">
+                        <?php  $_result=M("slide_data")->field("*")->where("fid = 2 and lang=4 AND status=1 ")->order("id desc")->limit("5")->select();; if ($_result): $n=0;foreach($_result as $key=>$r):++$n;$mod = ($n % 2 );?><div class="swiper-slide">
                             <a href="<?php echo ($r["link"]); ?>" target="_blank"><img src="<?php echo ($r["pic"]); ?>" alt="<?php echo ($r["title"]); ?>"></a>
                         </div><?php endforeach; endif;?>
                     </div>
@@ -171,16 +171,16 @@
                     <div class="title"><?php echo L(product_des);?></div>
                     <div class="list clearfix">
  <?php if($Think.LANG_SET==en) : ?>
-    <?php  $_result=M("Product")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1  AND catid in(110,134,135)  AND posid =1")->order("listorder desc")->limit("6")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>" class="box wow fadeInDown animated col-lg-6 col-md-6 col-sm-6">
+    
+    <?php elseif( $Think.LANG_SET==es): ?>
+    
+        <?php elseif( $Think.LANG_SET==ar): ?>
+    <?php  $_result=M("Product")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=4 AND status=1  AND catid=128  AND posid =1")->order("listorder desc")->limit("6")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>" class="box wow fadeInDown animated col-lg-6 col-md-6 col-sm-6">
                             <div style="position:relative">
                                 <div class="box-img"><img src="<?php echo ($r["thumb"]); ?>" alt="<?php echo ($r["title"]); ?>" /></div>
                                 <p><?php echo ($r["title"]); ?></p>
                             </div>
                         </a><?php endforeach; endif;?>
-    <?php elseif( $Think.LANG_SET==es): ?>
-    
-        <?php elseif( $Think.LANG_SET==ar): ?>
-    
             <?php elseif( $Think.LANG_SET==ru): ?>
     
     <?php endif;?> 
@@ -414,13 +414,13 @@
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
  <?php if($Think.LANG_SET==en) : ?>
-    <?php  $_result=M("Case")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1  AND catid=112  AND posid =1")->order("listorder desc")->limit("10")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><div class="swiper-slide">
-            <div class="box-img"><img src="<?php echo ($r["thumb"]); ?>" alt="<?php echo ($r["title"]); ?>" /></div>
-        </div><?php endforeach; endif;?>
+    
     <?php elseif( $Think.LANG_SET==es): ?>
     
         <?php elseif( $Think.LANG_SET==ar): ?>
-    
+    <?php  $_result=M("Case")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=4 AND status=1  AND catid=130  AND posid =1")->order("listorder desc")->limit("10")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><div class="swiper-slide">
+            <div class="box-img"><img src="<?php echo ($r["thumb"]); ?>" alt="<?php echo ($r["title"]); ?>" /></div>
+        </div><?php endforeach; endif;?>
             <?php elseif( $Think.LANG_SET==ru): ?>
     
     <?php endif;?>     
@@ -435,13 +435,13 @@
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
  <?php if($Think.LANG_SET==en) : ?>
-    <?php  $_result=M("Case")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1  AND catid=112  AND posid =1")->order("listorder desc")->limit("10")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><div class="swiper-slide">
-            <div class="box-img"><img src="<?php echo ($r["thumb"]); ?>" alt="<?php echo ($r["title"]); ?>" /></div>
-        </div><?php endforeach; endif;?>
+    
     <?php elseif( $Think.LANG_SET==es): ?>
     
         <?php elseif( $Think.LANG_SET==ar): ?>
-    
+    <?php  $_result=M("Case")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=4 AND status=1  AND catid=130  AND posid =1")->order("listorder desc")->limit("10")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><div class="swiper-slide">
+            <div class="box-img"><img src="<?php echo ($r["thumb"]); ?>" alt="<?php echo ($r["title"]); ?>" /></div>
+        </div><?php endforeach; endif;?>
             <?php elseif( $Think.LANG_SET==ru): ?>
     
     <?php endif;?>   

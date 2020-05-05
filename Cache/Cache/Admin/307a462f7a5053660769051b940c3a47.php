@@ -73,75 +73,96 @@ function googleTranslateElementInit() {
 
 
 
-<form name="myform" id="myform" action="<?php if($action_name=='add'): echo U($module_name.'/insert'); else: echo U($module_name.'/update'); endif; ?>" method="post">
+<form method='post'  id="form1" action="<?php echo U('Config/dosite');?>">
+<table width="100%"  cellpadding=0 cellspacing=0  class="table_form">
+  <tr>
+    <th width="120"><?php echo L('config_mail_md');?></th>
+    <td class="y-bg">
+     <input name="mail_type"   value="1" onclick="showsmtp(this)" type="radio"  <?php if($mail_type == 1): ?>checked<?php endif; ?>> <?php echo L('config_mail_smtp');?>
+	 <input name="mail_type"  value="2" onclick="showsmtp(this)" type="radio"  <?php if($mail_type == 2): ?>checked<?php endif; ?>  <?php if(substr(strtolower(PHP_OS), 0, 3) == 'win') echo 'disabled'; ?>/> <?php echo L('config_mail_mailfun');?>
+	 <input name="mail_type"   value="3" onclick="showsmtp(this)" type="radio"  <?php if($mail_type == 3): ?>checked<?php endif; ?>> sendmail
+	</td>
+  </tr>
+  <tbody id="smtpconfig" style="">
+  <tr>
+    <th><?php echo L('config_mail_server');?></th>
+    <td class="y-bg"><input type="text" class="input-text" name="mail_server" id="mail_server" size="30" value="<?php echo ($mail_server); ?>"/></td>
+  </tr>
+  <tr>
+    <th><?php echo L('config_mail_port');?></th>
+    <td class="y-bg"><input type="text" class="input-text" name="mail_port" id="mail_port" size="30" value="<?php echo ($mail_port); ?>"/></td>
+  </tr>
+  <tr>
+    <th><?php echo L('config_mail_from');?></th>
+    <td class="y-bg"><input type="text" class="input-text" name="mail_from" id="mail_from" size="30" value="<?php echo ($mail_from); ?>"/></td>
+  </tr>
+  <tr>
+    <th><?php echo L('config_mail_auth');?></th>
+    <td class="y-bg">
+    <input name="mail_auth" id="mail_auth" value="1" type="radio" <?php if($mail_auth == 1): ?>checked<?php endif; ?>> <?php echo L('open_select');?>	<input name="mail_auth" id="mail_auth" value="0" type="radio" <?php if($mail_auth == 0): ?>checked<?php endif; ?> > <?php echo L('close_select');?></td>
+  </tr>
 
-<table cellpadding=0 cellspacing=0 class="table_form" width="100%">
+	  <tr>
+	    <th><?php echo L('config_mail_user');?></th>
+	    <td class="y-bg"><input type="text" class="input-text" name="mail_user" id="mail_user" size="30" value="<?php echo ($mail_user); ?>"/></td>
+	  </tr>
+	  <tr>
+	    <th><?php echo L('config_mail_password');?></th>
+	    <td class="y-bg"><input type="password" class="input-text" name="mail_password" id="mail_password" size="30" value="<?php echo ($mail_password); ?>"/></td>
+	  </tr>
 
-	<tr>
-		  <td width="120"><font color="red">*</font><?php echo L(module_name);?>
-		  </td>
-		  <td>
-			<input type="text" id="title" name="title" value="<?php echo ($vo["title"]); ?>" size="20" class="input-text required" minlength="2"    maxlength="30"  title="<?php echo L(module_tip_title);?>" />
-		  </td>
-	</tr>
-	<tr>
-		  <td width="120"><font color="red">*</font><?php echo L(module_table);?>
-		  </td>
-		  <td>
-			<input type="text" id="name" name="name" <?php if($action_name=='edit'): ?>disabled="disabled"<?php endif; ?> value="<?php echo ($vo["name"]); ?>" size="20" class="input-text"  validate="required:true, english:true,remote: '<?php echo U($module_name.'/insert?isajax=1');?>' ,minlength:2, maxlength:30" />
-		  </td>
-	</tr>
-	<tr>
-		  <td><?php echo L(module_listfields);?>
-		  </td>
-		  <td><input type="text" id="listfields" name="listfields"  class="input-text" size="55" value="<?php if(empty($vo['listfields'])): ?>*<?php else: echo ($vo["listfields"]); endif; ?>" /> <?php echo L(examples);?>:id,title,url,catid
-		  </td>
-	</tr>
-	<tr>
-		  <td><?php echo L(module_issearch);?>
-		  </td>
-		  <td><?php echo Form::radio(array('field'=>'issearch','options'=>array('1'=>L('yes'),'0'=>L('no'))),$vo['issearch']);?></td>
-		  </td>
-	</tr>
+ </tbody>
 
-	<tr>
-		  <td><?php echo L(module_ispost);?>
-		  </td>
-		  <td><?php echo Form::radio(array('field'=>'ispost','options'=>array('1'=>L('yes'),'0'=>L('no'))),$vo['ispost']);?></td>
-		  </td>
-	</tr>
+<tbody id="sendmailconfig" style="">
+ <!-- <tr>
+    <th><?php echo L('config_mail_sendmail');?></th>
+    <td class="y-bg"><input type="text" class="input-text" name="mail_sendmail" id="mail_sendmail" size="30" value="<?php echo ($mail_sendmail); ?>"/></td>
+  </tr> -->
+ </tbody>
 
-	<tr>
-		<td><?php echo L('postgroup');?></td>
-		<td><?php echo Form::checkbox(array('field'=>'postgroup','options'=>$Role,'options_key'=>'key,name'),$vo['postgroup']);?></td>
-	</tr>
-
-
-	<tr>
-		  <td><?php echo L(module_description);?>
-		  </td>
-		  <td><textarea id="description" name="description" rows=4"" cols="56"><?php echo ($vo["description"]); ?></textarea>
-		  </td>
-	</tr>
-
-<?php if($action_name=='add'): ?><tr>
-		  <td><?php echo L(module_table_type);?>
-		  </td>
-		  <td><input type="radio" name="emptytable" value="1"   /> <?php echo L(module_empty_table);?> <input  type="radio"  name="emptytable" value="0"  checked /> <?php echo L(module_news_table);?>
-		  </td>
-	</tr>
-	<input type="hidden" id="type" name="type" value="<?php echo ($_GET[type]); ?>"/><?php endif; ?>
-</table>
-<div  class="btn">
-<?php if($vo['id']!=''): ?><input TYPE="hidden" name="id" value="<?php echo ($vo["id"]); ?>"><?php endif; ?>
-<INPUT TYPE="submit"  value="<?php echo L('dosubmit');?>" class="button buttonBtn" >
-<input TYPE="reset"  value="<?php echo L('cancel');?>" class="button">
+  <tr>
+    <th><?php echo L('config_mail_test');?></th>
+    <td class="y-bg"><input type="text" class="input-text" name="mail_to" id="mail_to" size="30" value=""/> <input type="button" class="button" onClick="javascript:test_mail();" value="<?php echo L('config_mail_testsed');?>"></td>
+  </tr>
+  </table>
+<div class="btn">
+<INPUT TYPE="submit"  value="<?php echo L('save');?>" class="button buttonBtn" >
+<input TYPE="reset"  value="<?php echo L('reset');?>" class="button">
 </div>
 </form>
-
 </div>
+<script>
+function showsmtp(obj){
 
-</body></html>
+	if(obj){
+	var issmtp  = $(obj).val();
+	}else{
+	var issmtp = $("input[name=mail_type][checked]").val();
+	}
+
+	if(issmtp==1){
+		$('#smtpconfig').show();
+		$('#sendmailconfig').hide();
+	}else if(issmtp==3){
+		$('#smtpconfig').hide();
+		$('#sendmailconfig').show();
+	}else{
+		$('#smtpconfig').hide();
+		$('#sendmailconfig').hide();
+	}
+}
+function test_mail(){
+
+ 	var mail_type =  $("input[name=mail_type][checked]").val();
+
+
+    $.post('<?php echo U("Config/testmail");?>&mail_to='+$('#mail_to').val(),{mail_type:mail_type,mail_sendmail:$('#mail_sendmail').val(),mail_server:$('#mail_server').val(),mail_port:$('#mail_port').val(),mail_user:$('#mail_user').val(),mail_password:$('#mail_password').val(),mail_auth:$('#mail_auth').val(),mail_auth:$('#mail_auth').val(),mail_from:$('#mail_from').val()}, function(data){
+	alert(data.info);
+	},"json");
+
+}
+showsmtp();
+</script>
 
 </body>
 </html>

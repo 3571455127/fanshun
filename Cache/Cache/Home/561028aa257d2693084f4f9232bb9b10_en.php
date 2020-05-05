@@ -125,51 +125,50 @@
             <div class="row">
                 <div class="form clearfix">
                     <div class="col-lg-8 col-md-8 col-sm-8">
-                        <form class="clearfix" method="post" action="index.php?g=Home&amp;a=message"
-                            onsubmit="return beforeSubmit2(this);">
+                        <form class="clearfix" method="post" action="index.php?g=Home&amp;a=message" onsubmit="return beforeSubmit2(this);">
                             <h3>Get In Touch</h3>
                             <div class="modal-box clearfix">
-                                <div class="txt col-lg-3 col-md-3 col-sm-3 col-xs-3">Name:</div>
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"> <input placeholder="Name" type="text"
+                                <div class="txt col-lg-3 col-md-3 col-sm-3 col-xs-3"><?php echo L(Name);?>:</div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"> <input placeholder="<?php echo L(Name);?>" type="text"
                                         name="name"></div>
                             </div>
                             <div class="modal-box clearfix">
-                                <div class="txt col-lg-3 col-md-3 col-sm-3 col-xs-3">E-mail: </div>
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"> <input placeholder="Email" type="text"
+                                <div class="txt col-lg-3 col-md-3 col-sm-3 col-xs-3"><?php echo L(Emaila);?>: </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"> <input placeholder="<?php echo L(Email);?>" type="text"
                                         name="email"></div>
                             </div>
                             <div class="modal-box clearfix">
-                                <div class="txt col-lg-3 col-md-3 col-sm-3 col-xs-3">Phone: </div>
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"> <input placeholder="Phone" type="text"
+                                <div class="txt col-lg-3 col-md-3 col-sm-3 col-xs-3"><?php echo L(Phone);?>: </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"> <input placeholder="<?php echo L(Phone);?>" type="text"
                                         name="phone"></div>
                             </div>
                             <div class="modal-box clearfix">
-                                <div class="txt col-lg-3 col-md-3 col-sm-3 col-xs-3">Message: </div>
+                                <div class="txt col-lg-3 col-md-3 col-sm-3 col-xs-3"><?php echo L(Message);?>: </div>
                                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9"> <textarea rows="3"
-                                        placeholder="Please enter your consulting information."
+                                        placeholder="<?php echo L(Message_des);?>"
                                         name="message"></textarea>
                                 </div>
                             </div>
-                            <input type="submit" value="Send Inquiry" class="contact-btn">
+                            <input type="submit" value="<?php echo L(SendInquiry);?>" class="contact-btn">
                         </form>
                     </div>
                     <div class="info col-lg-4 col-md-4 col-sm-4">
                         <ul>
                             <li>
                                 <i class="fa fa-phone fa-2x"></i>
-                                <h5>Telephone</h5>
+                                <h5><?php echo L(Telephone);?></h5>
                                 <p><?php echo ($phone); ?></p>
                             </li>
                             <li>
                                 <i class="fa fa-mobile fa-3x"></i>
-                                <h5>Mobilephone</h5>
+                                <h5><?php echo L(Mobilephone);?></h5>
                                 <p><?php echo ($shouji); ?></p>
                                 <p><?php echo ($shoujia); ?></p>
 
                             </li>
                             <li>
                                 <i class="fa fa-envelope fa-2x"></i>
-                                <h5>E-mail</h5>
+                                <h5><?php echo L(Emaila);?></h5>
                                 <p><?php echo ($email); ?></p>
                                 <p><?php echo ($emaila); ?></p>
 
@@ -180,7 +179,7 @@
                 <div class="lines"></div>
 
                 <div class="conatact-recommend">
-                    <h6>Recommend Read</h6>
+                    <h6><?php echo L(RecommendRead);?></h6>
                     <!-- pc -->
                     <div class="pc-about-swiper">
                         <div class="swiper-container">
@@ -321,7 +320,7 @@
 
     <footer>
         <div class="container">
-            <div class="row wow fadeInUp animated">
+            <div class="row">
                 <div class="details col-lg-7 col-md-7">
                     <div class="top">
                         <h6><?php echo L(wantto);?></h6>
@@ -354,7 +353,7 @@
                 </form>
             </div>
         </div>
-        <div class="copy  wow fadeInUp animated"><?php echo ($cop); ?></div>
+        <div class="copy"><?php echo ($cop); ?></div>
         <div class="goTop" style="display: block;">
             <i class="topIcon"></i>
             <p>TOP</p>

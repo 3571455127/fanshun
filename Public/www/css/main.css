@@ -248,11 +248,14 @@ header .navbar {
     margin-bottom: 0;
     background: rgba(255, 255, 255, .2);
     border: none;
+    border-radius: 0px;
 }
 
-header .other-navbar {
+header .other-navbar,
+header .other-navbar .second {
     background: rgba(0, 0, 0, .8);
 }
+
 
 header .navbar-default .navbar-nav>li>a {
     color: #fff;
@@ -1151,14 +1154,14 @@ textarea::-webkit-input-placeholder {
 }
 
 /* 分页 */
-.pages {
+.pagingClick {
     margin: 0 auto;
     text-align: center;
     padding: 4% 0;
 }
 
-.pages a,
-.pages span {
+.pagingClick a,
+.pagingClick span {
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -1170,9 +1173,9 @@ textarea::-webkit-input-placeholder {
     margin-right: 20px;
 }
 
-.pages span {
+.pagingClick span {
     color: #fff;
-    background-color: #3C7258;
+    background-color: #fe5952;
 }
 
 .product-recommend .title {
@@ -1196,6 +1199,10 @@ textarea::-webkit-input-placeholder {
 .product-recommend .product-swiper {
     padding: 10px 0;
 }
+
+/* .product-recommend .swiper-slide {
+    border: 1px solid #ddd;
+} */
 
 .product-recommend .swiper-slide .box {
     border: 1px solid #ddd;
@@ -2407,4 +2414,7 @@ header .wap-box {
     }
 
 }
-.ljbg{padding-top:82px;}
+
+.ljbg {
+    padding-top: 82px;
+}

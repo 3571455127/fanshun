@@ -134,42 +134,42 @@
                             onsubmit="return beforeSubmit2(this);">
                             <div class="modal-box clearfix">
                                 <div class="col-lg-4 clo-md-4 col-sm-4 col-xs-6">
-                                    <p>Name <span> *</span></p>
-                                    <input placeholder="Name" type="text" name="name">
+                                    <p><?php echo L(Name);?> <span> *</span></p>
+                                    <input placeholder="<?php echo L(Name);?>" type="text" name="name">
                                 </div>
                                 <div class="col-lg-4 clo-md-4 col-sm-4 col-xs-6">
-                                    <p>E-mail <span> *</span></p>
-                                    <input placeholder="Email" type="text" name="email">
+                                    <p><?php echo L(Emaila);?> <span> *</span></p>
+                                    <input placeholder="<?php echo L(Email);?>" type="text" name="email">
                                 </div>
                                 <div class="col-lg-4 clo-md-4 col-sm-4 col-xs-6">
-                                    <p>Website</p>
-                                    <input placeholder="Phone" type="text" name="phone">
+                                    <p><?php echo L(Website);?></p>
+                                    <input placeholder="<?php echo L(Phone);?>" type="text" name="phone">
                                 </div>
                             </div>
                             <div class="modal-box">
-                                <p>Message <span> *</span></p>
-                                <textarea rows="3" placeholder="Please enter your consulting information."
+                                <p><?php echo L(Message);?> <span> *</span></p>
+                                <textarea rows="3" placeholder="<?php echo L(Message_des);?>"
                                     name="message"></textarea>
                             </div>
-                            <input type="submit" value="Send Inquiry" class="proshow-sub">
+                            <input type="submit" value="<?php echo L(SendInquiry);?>" class="proshow-sub">
                         </form>
 
                     </div>
                     <div class="right col-lg-4 col-md-4">
                         <div class="widget">
                             <div class="customwidget item-price w40">
-                                <span class="text-center">Product Name</span>
+                                <span class="text-center"><?php echo L(ProductName);?></span>
 
                                 <hr>
                                 <?php echo ($guige); ?>
-                                <button class="btn btn-primary">Submit Review</button>
+                                <button class="btn btn-primary"><?php echo L(SubmitReview);?></button>
                             </div><!-- end newsletter -->
                         </div>
                     </div>
                 </div>
 
                 <!-- featured -->
-                <div class="featured">
+                <div class="featured clearfix">
                     <div class="col-lg-4 col-md-4 col-sm-4">
                         <div class="shop-item">
                             <div class="post-media entry">
@@ -247,7 +247,7 @@
 
     <footer>
         <div class="container">
-            <div class="row wow fadeInUp animated">
+            <div class="row">
                 <div class="details col-lg-7 col-md-7">
                     <div class="top">
                         <h6><?php echo L(wantto);?></h6>
@@ -280,7 +280,7 @@
                 </form>
             </div>
         </div>
-        <div class="copy  wow fadeInUp animated"><?php echo ($cop); ?></div>
+        <div class="copy"><?php echo ($cop); ?></div>
         <div class="goTop" style="display: block;">
             <i class="topIcon"></i>
             <p>TOP</p>

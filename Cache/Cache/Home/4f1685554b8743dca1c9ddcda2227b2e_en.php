@@ -154,7 +154,7 @@
 
     <footer>
         <div class="container">
-            <div class="row wow fadeInUp animated">
+            <div class="row">
                 <div class="details col-lg-7 col-md-7">
                     <div class="top">
                         <h6><?php echo L(wantto);?></h6>
@@ -187,7 +187,7 @@
                 </form>
             </div>
         </div>
-        <div class="copy  wow fadeInUp animated"><?php echo ($cop); ?></div>
+        <div class="copy"><?php echo ($cop); ?></div>
         <div class="goTop" style="display: block;">
             <i class="topIcon"></i>
             <p>TOP</p>

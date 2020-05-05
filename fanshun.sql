@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50647
 File Encoding         : 65001
 
-Date: 2020-05-05 09:33:56
+Date: 2020-05-05 09:38:14
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1421,8 +1421,8 @@ INSERT INTO `cosmo_online` VALUES ('63908bd90b5789d8abf9421ca1df2372', '0', '', 
 INSERT INTO `cosmo_online` VALUES ('0a884ac170ffbc60ba44bff88edbd588', '0', '', '27.45.146.101', '1588642263', '4');
 INSERT INTO `cosmo_online` VALUES ('607a5773f8d3c9e37bef8b7d0b15745a', '0', '', '27.45.146.101', '1588642229', '4');
 INSERT INTO `cosmo_online` VALUES ('5ca749bc9c543fc3a858f656ee51d027', '0', '', '27.45.146.101', '1588642233', '4');
-INSERT INTO `cosmo_online` VALUES ('55614be3c1a43d2eb3df613004fddbf2', '0', '', '27.45.146.101', '1588642271', '4');
-INSERT INTO `cosmo_online` VALUES ('b7bcc85724269ec2876f18ae71f687ff', '0', '', '27.45.146.101', '1588642516', '4');
+INSERT INTO `cosmo_online` VALUES ('55614be3c1a43d2eb3df613004fddbf2', '0', '', '27.45.146.101', '1588642688', '4');
+INSERT INTO `cosmo_online` VALUES ('b7bcc85724269ec2876f18ae71f687ff', '0', '', '27.45.146.101', '1588642586', '4');
 
 -- ----------------------------
 -- Table structure for cosmo_page
@@ -1728,4 +1728,3 @@ CREATE TABLE `cosmo_user` (
 -- ----------------------------
 INSERT INTO `cosmo_user` VALUES ('4', '2', 'fanshun', '71b603ab26c048233826f12a204816ef7c34dc05', 'osd@fanshun.cn', '', '', '', '1', '', '', '', '', '', '141', '1540782434', '0', '1561964411', '61.140.27.219', '27.45.146.101', '1', '0.00', '0', '');
 INSERT INTO `cosmo_user` VALUES ('2', '1', 'admin', 'fabaa88b6979f99875d10d053a1b128e90920d98', 'info@cosmoing.com', 'admin', '', '', '1', '', '', '', '', '', '94', '1502869825', '0', '1588642160', '122.97.176.27', '27.45.146.101', '1', '0.00', '0', '');
-SET FOREIGN_KEY_CHECKS=1;

@@ -15,7 +15,21 @@ $(function () {
             prevEl: '.pc-banner .swiper-button-prev',
         },
     })
+      // pc-case
+    var mySwiper = new Swiper('.pc-case .swiper-container', {
+        autoplay: true,
+        speed: 1500,
+        autoHeight: true,
+        slidesPerView: 5,
+        spaceBetween: 30,
+        autoHeight: true,
+        loop: true,
+        navigation: {
+            nextEl: '.pc-case .swiper-button-next',
+            prevEl: '.pc-case .swiper-button-prev',
+        },
 
+    })
     // product-recommend
     var mySwiper = new Swiper('.product-recommend .swiper-container', {
         autoplay: true,
@@ -100,29 +114,13 @@ $(function () {
         },
     })
 
-    // pc-case
-    var mySwiper = new Swiper('.pc-case .swiper-container', {
-        autoplay: true,
-        speed: 1500,
-        autoHeight: true,
-        slidesPerView: 5,
-        spaceBetween: 30,
-        autoHeight: true,
-        loop: true,
-        navigation: {
-            nextEl: '.pc-case .swiper-button-next',
-            prevEl: '.pc-case .swiper-button-prev',
-        },
 
-    })
     // wap-case
     var mySwiper = new Swiper('.wap-case .swiper-container', {
         autoplay: true,
         speed: 1500,
-        autoHeight: true,
         slidesPerView: 2,
         spaceBetween: 30,
-        autoHeight: true,
         loop: true,
         pagination: {
             el: '.wap-case .swiper-pagination',
@@ -209,10 +207,6 @@ function beforeSubmit2(form) {
     } else if (form.email.value.indexOf('@') < 0) {
         alert('The email is wrong');
         form.email.focus();
-        return false;
-    } else if (!re.test(form.phone.value)) {
-        alert('The phone is wrong');
-        form.phone.focus();
         return false;
     } else if (form.message.value == '') {
         alert('The message can not be empty');

@@ -73,52 +73,48 @@ function googleTranslateElementInit() {
 
 
 
-<script>
-$('#nav ul a ').removeClass('on');
-$('#nav ul').append('<a href="<?php echo U("Field/index",array(moduleid=>$_GET[moduleid]));?>" class="on"><?php echo L(field_manage);?></a> | <a href="<?php echo U("Field/add",array(moduleid=>$_GET[moduleid]));?>"><?php echo L(field_add);?></a> |');
-</script>
 
-<form  id="myform" name="myform" action="<?php echo U('Field/listorder');?>" method="post">
+<form name="myform" id="myform" action="" method="post">
 <div class="table-list">
     <table width="100%" cellspacing="0">
         <thead>
       		<tr>
-			<th width="40"><?php echo L(listorder);?></th>
-			<th align="left" width="80"><?php echo L(field_field);?></th>
-			<th align="left"><?php echo L(field_name);?></th>
-			<th width="60" align="left" ><?php echo L(field_type);?></th>
-			<th width="60"><?php echo L(field_issystem);?></th>
-			<th width="40"><?php echo L(field_required);?></th>
-			<th width="200"><?php echo L(manage);?></th>
+      		<th width="20"><input type="checkbox"  id="check_box"  onclick="selectall('ids[]');" /></th>
+			<th width="30"><?php echo L('listorder');?></th>
+			<th width="40">ID</th>
+			<th width="110" align="center"><?php echo L(LANG_NAME);?></th>
+			<th align="left"><?php echo L(LANG_MARK);?></th>
+			<th align="left"  width="50"><?php echo L(LANG_FLAG);?></th>
+			<th align="center"  width="40"><?php echo L(STATUS);?></th>
+			<th width="180"   align="center"><?php echo L('manage');?></th>
       		</tr>
       	</thead>
       	<tbody>
       		<?php if(is_array($list)): $k = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><tr>
-			<td align='center' width="40"><input name='listorders[<?php echo ($vo["id"]); ?>]' type='text' size='3' value='<?php echo ($vo["listorder"]); ?>' class='input-text-c'></td>
-      		<td><?php echo ($vo['field']); ?></td>
-      		<td><?php echo ($vo['name']); ?></td>
-      		<td><?php echo ($vo['type']); ?></td>
-      		<td align="center"><?php if(in_array($vo['field'],$sysfield)): echo L(duihao); else: echo L(xuohao); endif; ?></td>
-			<td align="center"><?php if($vo['required']==1): echo L(duihao); else: echo L(xuohao); endif; ?></td>
-      		<td align="center">
-			<a href="<?php echo U('Field/edit',array(moduleid=>$vo['moduleid'],id=>$vo['id']));?>" ><?php echo L(edit);?></a>  |
-			<?php if($vo[status]==1): if(in_array($vo['field'],$nodostatus)): ?><font color="#D3D3D3"><?php echo L(disable);?></font>
-				<?php else: ?>
-				<a href="<?php echo U('Field/status',array(id=>$vo['id'],status=>0));?>"><?php echo L(disable);?></a><?php endif; ?>
-			<?php else: ?>
-				<a href="<?php echo U('Field/status',array(id=>$vo['id'],status=>1));?>"><font color="red"><?php echo L(enable);?></font></a><?php endif; ?>
-		 | <?php if(in_array($vo['field'],$sysfield)): ?><font color="#D3D3D3"><?php echo L(delete);?></font>
-		 <?php else: ?>
-		  <a href="javascript:confirm_delete('<?php echo U('Field/delete',array(id=>$vo['id']));?>')"><?php echo L(delete);?></a><?php endif; ?>
-		 </td>
+      		<td align="center"><input type="checkbox" name="ids[]" value="<?php echo ($vo['id']); ?>" /></td>
+			<td width="40" align='center'><input name='listorders[<?php echo ($vo["id"]); ?>]' type='text' size='3' value='<?php echo ($vo["listorder"]); ?>' class='input-text-c'></td>
+			<td align="center"><?php echo ($vo['id']); ?></td>
+      		<td align="center"><?php echo ($vo['name']); ?></td>
+			<td align="left"><?php echo ($vo['mark']); ?></td>
+      		<td align="left"><?php if(!empty($vo['flag'])): ?><img src="./Public/Images/flag/<?php echo ($vo['flag']); ?>"><?php endif; ?>&nbsp;</td>
+			<td align="center"><?php if(($vo['status']) == "1"): echo L('yes');?>
+      		<?php else: ?>
+      		<?php echo L('no'); endif; ?></td>
+			<td align="center">
+			<a href="<?php echo U('Lang/edit',array(id=>$vo['id']));?>"><?php echo L('edit');?></a> | <a href="javascript:confirm_delete('<?php echo U('Lang/delete',array(id=>$vo['id']));?>')"><?php echo L('delete');?></a></td>
       		</tr><?php endforeach; endif; else: echo "" ;endif; ?>
       	</tbody>
     </table>
+
+		<div class="btn">
+		<input type="button" class="button" name="dosubmit" value="<?php echo L('delete')?>" onclick="myform.action='<?php echo U($module_name.'/deleteall');?>';return onfirm_deleteall()"/>
+		<input type="button" class="button" name="dosubmit" value="<?php echo L('listorder')?>" onclick="myform.action='<?php echo U($module_name.'/listorder');?>';$('#myform').submit();"/> </div>
+	</div>
 </div>
+</form>
 
-  <div class="btn">  <input  type="button" class="button" name="dosubmit" value="<?php echo L(listorder);?>" onclick="myform.action='<?php echo U($module_name.'/listorder');?>';$('#myform').submit();" /></div>
+<div id="pages" class="page"><?php echo ($page); ?></div>
 
-</form></div>
 </body></html>
 
 </body>
